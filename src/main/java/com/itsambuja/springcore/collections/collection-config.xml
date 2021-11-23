@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.itsambuja.springcore.collections.Employee" name="emp1">
+		<property name="name" value="Ambuj Kumar"/>
+		<property name="phones">
+			<list>
+				<value>10</value>
+				<value>20</value>
+				<value>30</value>
+				<value>30</value>
+			</list>		
+		</property>
+		<property name="addresses">
+			<set>
+				<value>Bihar</value>
+				<value>UP</value>
+				<value>Delhi</value>
+				<value>Kolkata</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="java" value="2 months"/>
+				<entry key="python" value="3 months"/>
+				<entry key="flutter" value="4 months"/>
+			</map>
+		</property>
+
+	</bean>
+</beans>
