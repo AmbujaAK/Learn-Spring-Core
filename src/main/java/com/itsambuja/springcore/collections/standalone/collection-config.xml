@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context.xsd
+ 		http://www.springframework.org/schema/util
+ 		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- Standalone list -->
+	<util:list list-class="java.util.LinkedList" id="myPhone">
+		<value>1000</value>
+		<value>2000</value>
+		<value>3000</value>
+		<value>4000</value>
+	</util:list>
+	
+	<util:set set-class="java.util.HashSet" id="myAddress">
+		<value>Delhi</value>
+		<value>Kanpur</value>
+		<value>Kolkata</value>
+		<value>Gaya</value>
+	</util:set>
+	
+	<util:map map-class="java.util.HashMap" id="myCourses">
+		<entry key="java" value="2 months"/>
+		<entry key="python" value="3 months"/>
+		<entry key="flutter" value="4 months"/>
+	</util:map>
+	
+	<util:properties id="dbConfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">Admin</prop>
+		<prop key="password">123456</prop>
+		<prop key="url">mysql:jdbc://localhost:3306/database</prop>
+	</util:properties>
+	
+	<bean class="com.itsambuja.springcore.collections.standalone.Employee" name="emp1">
+		<property name="name" value="Ambuj Kumar"/>
+		<property name="phones" ref="myPhone"/>
+		<property name="addresses" ref="myAddress"/>
+		<property name="courses" ref="myCourses"/>
+		<property name="properties" ref="dbConfig"></property>
+	</bean>
+</beans>
