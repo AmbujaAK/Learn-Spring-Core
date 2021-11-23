@@ -9,8 +9,12 @@ public class Main {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/itsambuja/springcore/stereotype/stereotype-config.xml");
 		
 		Student student = context.getBean("student", Student.class);
-		System.out.println(student);
+		System.out.println(student.hashCode());
 
+		Student student1 = context.getBean("student", Student.class);
+		System.out.println(student1.hashCode());
+		
+		
 	}
 
 }
